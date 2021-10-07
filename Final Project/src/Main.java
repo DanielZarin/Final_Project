@@ -6,12 +6,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Main {
 	
 	public static void main(String[] args) throws Exception {
-
+		String globURL = "https://shemsvcollege.github.io/Trivia/";
 		WebDriver driver = new ChromeDriver();
 		
 		//********************************** Pre-Game SANITY **********************************
-		driver.get("https://shemsvcollege.github.io/Trivia/");
-		Thread.sleep(500);
+		driver.get(globURL);
 		if(driver.getPageSource().contains("good luck!")==true) {
 			driver.findElement(By.id("startB")).click();
 		}
@@ -20,9 +19,7 @@ public class Main {
 		}
 		
 		if(driver.getPageSource().contains("question number: 1")==true) {
-			Thread.sleep(500);
 			driver.findElement(By.name("question")).sendKeys("a");
-			Thread.sleep(500);
 			driver.findElement(By.id("nextquest")).click();
 		}
 		else {
@@ -30,13 +27,11 @@ public class Main {
 		}
 		
 		if(driver.getPageSource().contains("Mark the right one!")==true) {
-			Thread.sleep(500);
-			driver.findElement(By.xpath("//*[@id=\"answers\"]/div[1]/div[2]/input")).sendKeys("a");
-			driver.findElement(By.xpath("//*[@id=\"answers\"]/div[2]/div[2]/input")).sendKeys("b");
-			driver.findElement(By.xpath("//*[@id=\"answers\"]/div[3]/div[2]/input")).sendKeys("c");
-			driver.findElement(By.xpath("//*[@id=\"answers\"]/div[4]/div[2]/input")).sendKeys("d");
+			String[][] ar = {{"1", "2", "a"},{"2", "2", "b"}, {"3", "2", "c"},{"4", "2", "d"}};
+			for (int i = 0; i < ar.length; i++) {
+				driver.findElement(By.xpath("//*[@id=\"answers\"]/div["+ ar[i][0] +"]/div["+ ar[i][1] +"]/input")).sendKeys(ar[i][2]);
+			}
 			driver.findElement(By.xpath("//*[@id=\"answers\"]/div[1]/div[1]/input")).click();
-			Thread.sleep(500);
 			driver.findElement(By.id("nextquest")).click();
 		}
 		else {
@@ -44,9 +39,7 @@ public class Main {
 		}
 		
 		if(driver.getPageSource().contains("question number: 2")==true) {
-			Thread.sleep(500);
 			driver.findElement(By.name("question")).sendKeys("b");
-			Thread.sleep(500);
 			driver.findElement(By.id("nextquest")).click();
 		}
 		else {
@@ -54,13 +47,11 @@ public class Main {
 		}
 		
 		if(driver.getPageSource().contains("Mark the right one!")==true) {
-			Thread.sleep(500);
-			driver.findElement(By.xpath("//*[@id=\"answers\"]/div[1]/div[2]/input")).sendKeys("e");
-			driver.findElement(By.xpath("//*[@id=\"answers\"]/div[2]/div[2]/input")).sendKeys("f");
-			driver.findElement(By.xpath("//*[@id=\"answers\"]/div[3]/div[2]/input")).sendKeys("g");
-			driver.findElement(By.xpath("//*[@id=\"answers\"]/div[4]/div[2]/input")).sendKeys("h");
+			String[][] ar = {{"1", "2", "e"},{"2", "2", "f"}, {"3", "2", "g"},{"4", "2", "h"}};
+			for (int i = 0; i < ar.length; i++) {
+				driver.findElement(By.xpath("//*[@id=\"answers\"]/div["+ ar[i][0] +"]/div["+ ar[i][1] +"]/input")).sendKeys(ar[i][2]);
+			}
 			driver.findElement(By.xpath("//*[@id=\"answers\"]/div[1]/div[1]/input")).click();
-			Thread.sleep(500);
 			driver.findElement(By.id("nextquest")).click();
 		}
 		else {
@@ -68,9 +59,7 @@ public class Main {
 		}
 		
 		if(driver.getPageSource().contains("question number: 3")==true) {
-			Thread.sleep(500);
 			driver.findElement(By.name("question")).sendKeys("c");
-			Thread.sleep(500);
 			driver.findElement(By.id("nextquest")).click();
 		}
 		else {
@@ -78,13 +67,11 @@ public class Main {
 		}
 		
 		if(driver.getPageSource().contains("Mark the right one!")==true) {
-			Thread.sleep(500);
-			driver.findElement(By.xpath("//*[@id=\"answers\"]/div[1]/div[2]/input")).sendKeys("i");
-			driver.findElement(By.xpath("//*[@id=\"answers\"]/div[2]/div[2]/input")).sendKeys("j");
-			driver.findElement(By.xpath("//*[@id=\"answers\"]/div[3]/div[2]/input")).sendKeys("k");
-			driver.findElement(By.xpath("//*[@id=\"answers\"]/div[4]/div[2]/input")).sendKeys("l");
+			String[][] ar = {{"1", "2", "i"},{"2", "2", "j"}, {"3", "2", "k"},{"4", "2", "l"}};
+			for (int i = 0; i < ar.length; i++) {
+				driver.findElement(By.xpath("//*[@id=\"answers\"]/div["+ ar[i][0] +"]/div["+ ar[i][1] +"]/input")).sendKeys(ar[i][2]);
+			}
 			driver.findElement(By.xpath("//*[@id=\"answers\"]/div[1]/div[1]/input")).click();
-			Thread.sleep(500);
 			driver.findElement(By.id("nextquest")).click();
 		}
 		else {
@@ -94,7 +81,6 @@ public class Main {
 
 		//********************************** Play SANITY **********************************
 		if(driver.getPageSource().contains("play")==true) {
-			Thread.sleep(500);
 			driver.findElement(By.xpath("//*[@id=\"secondepage\"]/center/button[1]")).click();
 		}
 		else {
@@ -102,7 +88,6 @@ public class Main {
 		}
 		
 		if(driver.getPageSource().contains("Test")==true) {
-			Thread.sleep(500);
 			driver.findElement(By.xpath("//*[@id=\"2\"]/input[1]")).click();
 			driver.findElement(By.xpath("//*[@id=\"btnnext\"]")).click();
 		}
@@ -111,7 +96,6 @@ public class Main {
 		}
 		
 		if(driver.getPageSource().contains("Test")==true) {
-			Thread.sleep(500);
 			driver.findElement(By.xpath("//*[@id=\"1\"]/input[1]")).click();
 			driver.findElement(By.xpath("//*[@id=\"btnnext\"]")).click();
 		}
@@ -120,7 +104,6 @@ public class Main {
 		}
 		
 		if(driver.getPageSource().contains("Test")==true) {
-			Thread.sleep(500);
 			driver.findElement(By.xpath("//*[@id=\"0\"]/input[1]")).click();
 			driver.findElement(By.xpath("//*[@id=\"btnnext\"]")).click();
 		}
