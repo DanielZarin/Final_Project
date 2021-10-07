@@ -359,7 +359,7 @@ public class Testing {
 		
 		@Test
 		public void test13() {
-			int i=0;
+			int i=1;
 		}
 		
 }
