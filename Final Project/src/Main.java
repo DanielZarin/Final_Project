@@ -6,10 +6,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Main {
 	
 	public static void main(String[] args) throws Exception {
+		//********************************** Pre-Game SANITY **********************************
 		String globURL = "https://shemsvcollege.github.io/Trivia/";
 		WebDriver driver = new ChromeDriver();
-		
-		//********************************** Pre-Game SANITY **********************************
 		driver.get(globURL);
 		if(driver.getPageSource().contains("good luck!")==true) {
 			driver.findElement(By.id("startB")).click();
