@@ -15,8 +15,8 @@ public class Testing {
 		driver.findElement(By.id("startB")).click();
 		
 		if(driver.getPageSource().contains("question number: 1")==true) {
-			int maxChar = 49;
-			for (int iLoopChar=0; iLoopChar <= maxChar; iLoopChar++) {
+			int maxChar = 50;
+			for (int iLoopChar=0; iLoopChar < maxChar; iLoopChar++) {
 				driver.findElement(By.name("question")).sendKeys("a"); 
 			}
 			driver.findElement(By.id("nextquest")).click();
@@ -35,8 +35,8 @@ public class Testing {
 		
 		if(driver.getPageSource().contains("question number: 1")==true) {
 			
-			int maxChar = 48;
-			for (int iLoopChar=0; iLoopChar <= maxChar; iLoopChar++) {
+			int maxChar = 49;
+			for (int iLoopChar=0; iLoopChar < maxChar; iLoopChar++) {
 				driver.findElement(By.name("question")).sendKeys("a"); 
 			}
 			driver.findElement(By.name("question")).sendKeys("?"); 
@@ -50,7 +50,7 @@ public class Testing {
 
 		@Test
 		public void test3() {
-//Click on the Back button on the answers to question 1
+		//Click on the Back button on the answers to question 1
 			WebDriver driver = new ChromeDriver();
 			driver.get(globURL);
 			driver.findElement(By.id("startB")).click();
@@ -62,7 +62,7 @@ public class Testing {
 
 		@Test
 		public void test4() {
-//Click on the Back button on question 2
+		//Click on the Back button on question 2
 			String[][] ar = {{"1", "2", "a"},{"2", "2", "b"}, {"3", "2", "c"},{"4", "2", "d"}};
 			WebDriver driver = new ChromeDriver();
 			driver.get(globURL);
@@ -80,7 +80,7 @@ public class Testing {
 		
 		@Test
 		public void test5() {
-//Click on the Back button on the answers to question 2
+		//Click on the Back button on the answers to question 2
 			String[] qArr = {"a","b"};
 			String[][] ar = {{"1", "2", "a"},{"2", "2", "b"}, {"3", "2", "c"},{"4", "2", "d"}};
 			int brakein = 4;
@@ -109,7 +109,7 @@ public class Testing {
 		
 		@Test
 		public void test6() {
-//Click on the Back button on question 3
+		//Click on the Back button on question 3
 			String[] qArr = {"a","b"};
 			String[][] ar = {{"1", "2", "a"},{"2", "2", "b"}, {"3", "2", "c"},{"4", "2", "d"},{"1","2","e"},{"2","2","f"},{"3","2","g"},{"4","2","h"}};
 			int brakein = 4;
@@ -138,7 +138,7 @@ public class Testing {
 		
 		@Test
 		public void test7() {
-//Click on the Back button on the answers to question 3
+		//Click on the Back button on the answers to question 3
 			String[] qArr = {"a","b"};
 			String[][] ar = {{"1", "2", "a"},{"2", "2", "b"}, {"3", "2", "c"},{"4", "2", "d"},{"1","2","e"},{"2","2","f"},{"3","2","g"},{"4","2","h"}};
 			int brakein = 4;
@@ -170,7 +170,7 @@ public class Testing {
 		
 		@Test
 		public void test8() {
-//Click on the Quit button after completing the preparation of the questions
+		//Click on the Quit button after completing the preparation of the questions
 			String[] qArr = {"a","b","c"};
 			String[][] ar = {{"1", "2", "a"},{"2", "2", "b"}, {"3", "2", "c"},{"4", "2", "d"},{"1","2","e"},{"2","2","f"},{"3","2","g"},{"4","2","h"},{"1","2","i"},{"2","2","j"},{"3","2","k"},{"4","2","l"}};
 			int brakein = 4;
@@ -201,7 +201,7 @@ public class Testing {
 		
 		@Test
 		public void test9() {
-//Click on the Back button on the answers to the 2nd question in the game
+		//Click on the Back button on the answers to the 2nd question in the game
 			String[] qArr = {"a","b","c"};
 			String[][] ar = {{"1", "2", "a"},{"2", "2", "b"}, {"3", "2", "c"},{"4", "2", "d"},{"1","2","e"},{"2","2","f"},{"3","2","g"},{"4","2","h"},{"1","2","i"},{"2","2","j"},{"3","2","k"},{"4","2","l"}};
 			int brakein = 4;
@@ -235,7 +235,7 @@ public class Testing {
 		
 		@Test
 		public void test10() {
-//Click on the Back button on the answers to the 3rd question in the game			
+		//Click on the Back button on the answers to the 3rd question in the game			
 			String[] qArr = {"a","b","c"};
 			String[][] ar = {{"1", "2", "a"},{"2", "2", "b"}, {"3", "2", "c"},{"4", "2", "d"},{"1","2","e"},{"2","2","f"},{"3","2","g"},{"4","2","h"},{"1","2","i"},{"2","2","j"},{"3","2","k"},{"4","2","l"}};
 			String[][] arr = {{"2","1"},{"1","1"}};
@@ -272,7 +272,7 @@ public class Testing {
 		
 		@Test
 		public void test11() {
-//Click on the Try again button
+		//Click on the Try again button
 			String[] qArr = {"a","b","c"};
 			String[][] ar = {{"1", "2", "a"},{"2", "2", "b"}, {"3", "2", "c"},{"4", "2", "d"},{"1","2","e"},{"2","2","f"},{"3","2","g"},{"4","2","h"},{"1","2","i"},{"2","2","j"},{"3","2","k"},{"4","2","l"}};
 			int brakein = 4;
@@ -310,7 +310,7 @@ public class Testing {
 		
 		@Test
 		public void test12() {
-//Click on the Quit button at the end of the game
+		//Click on the Quit button at the end of the game
 			String[] qArr = {"a","b","c"};
 			String[][] ar = {{"1", "2", "a"},{"2", "2", "b"}, {"3", "2", "c"},{"4", "2", "d"},{"1","2","e"},{"2","2","f"},{"3","2","g"},{"4","2","h"},{"1","2","i"},{"2","2","j"},{"3","2","k"},{"4","2","l"}};
 			int brakein = 4;
@@ -348,14 +348,15 @@ public class Testing {
 		
 		@Test
 		public void test13() {
+		//Enter 30 characters into answers fields and click on Next	
 			String[][] ar = {{"1", "2", "a"},{"2", "2", "b"}, {"3", "2", "c"},{"4", "2", "d"}};
 			WebDriver driver = new ChromeDriver();
 			driver.get(globURL);
 			driver.findElement(By.id("startB")).click();
 			driver.findElement(By.name("question")).sendKeys("a"); 
 			driver.findElement(By.id("nextquest")).click();
-			int maxChar = 29;
-				for (int iLoopChar=0; iLoopChar <= maxChar; iLoopChar++) {
+			int maxChar = 30;
+				for (int iLoopChar=0; iLoopChar < maxChar; iLoopChar++) {
 					for (int i = 0; i < ar.length; i++) {
 						driver.findElement(By.xpath("//*[@id=\"answers\"]/div["+ ar[i][0] +"]/div["+ ar[i][1] +"]/input")).sendKeys(ar[i][2]);
 						}
@@ -363,6 +364,28 @@ public class Testing {
 			driver.findElement(By.xpath("//*[@id=\"answers\"]/div[1]/div[1]/input")).click();
 			driver.findElement(By.id("nextquest")).click();
 			assertEquals(true, driver.findElement(By.name("question")).isDisplayed());
+		}
+		
+		@Test
+		public void test14(){
+		//Go through all the radio buttons in the answers to question 1
+			String[][] ar = {{"1", "1"},{"2", "1"}, {"3", "1"},{"4", "1"}};
+			WebDriver driver = new ChromeDriver();
+			driver.get(globURL);
+			driver.findElement(By.id("startB")).click();
+			driver.findElement(By.name("question")).sendKeys("a");
+			driver.findElement(By.id("nextquest")).click();
+			for (int i = 0; i < ar.length; i++) {
+				driver.findElement(By.xpath("//*[@id=\"answers\"]/div["+ ar[i][0] +"]/div["+ ar[i][1] +"]/input")).click();
+				if (!driver.findElement(By.xpath("//*[@id=\"answers\"]/div["+ ar[i][0] +"]/div["+ ar[i][1] +"]/input")).isEnabled()){
+					fail("Error!");
+				}
+			}
+			//*[@id="answers"]/div[1]/div[1]/input - radio 1
+			////*[@id="answers"]/div[2]/div[1]/input - radio 2
+			////*[@id="answers"]/div[3]/div[1]/input - radio 3
+			////*[@id="answers"]/div[4]/div[1]/input - radio 4
+			////*[@id="answers"]/div[1]/div[2]/input - answer
 		}
 		
 }
