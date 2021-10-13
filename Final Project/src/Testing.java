@@ -22,6 +22,7 @@ public class Testing {
 			}
 			driver.findElement(By.id("nextquest")).click();
 			assertEquals(true, driver.findElement(By.xpath("//*[@id=\"answers\"]/div[1]/div[1]/input")).isDisplayed());
+			driver.close();
 		}
 		else {
 			fail("ERROR");
@@ -43,6 +44,7 @@ public class Testing {
 			driver.findElement(By.name("question")).sendKeys("?"); 
 			driver.findElement(By.id("nextquest")).click();
 			assertEquals(true, driver.findElement(By.xpath("//*[@id=\"answers\"]/div[1]/div[1]/input")).isDisplayed());
+			driver.close();
 		}
 		else {
 			fail("ERROR");
@@ -59,6 +61,7 @@ public class Testing {
 			driver.findElement(By.id("nextquest")).click();
 			driver.findElement(By.id("backquest")).click();
 			assertEquals(true, driver.getPageSource().contains("question number: 1")==true);
+			driver.close();
 		}
 
 		@Test
@@ -77,6 +80,7 @@ public class Testing {
 			driver.findElement(By.id("nextquest")).click();
 			driver.findElement(By.id("backquest")).click();
 			assertEquals(true, driver.findElement(By.xpath("//*[@id=\"answers\"]/div[1]/div[1]/input")).isEnabled());
+			driver.close();
 		}
 		
 		@Test
@@ -106,6 +110,7 @@ public class Testing {
 			}
 			driver.findElement(By.id("backquest")).click();
 			assertEquals(true, driver.getPageSource().contains("question number: 2")==true);
+			driver.close();
 		}
 		
 		@Test
@@ -135,6 +140,7 @@ public class Testing {
 			}
 			driver.findElement(By.id("backquest")).click();
 			assertEquals(true, driver.findElement(By.name("answer1")).isDisplayed());
+			driver.close();
 		}
 		
 		@Test
@@ -167,6 +173,7 @@ public class Testing {
 			driver.findElement(By.id("nextquest")).click();
 			driver.findElement(By.id("backquest")).click();
 			assertEquals(true, driver.findElement(By.name("question")).isDisplayed());
+			driver.close();
 		}
 		
 		@Test
@@ -198,6 +205,7 @@ public class Testing {
 			}
 			driver.findElement(By.xpath("//*[@id=\"secondepage\"]/center/button[2]")).click();
 			assertEquals(false, driver.findElement(By.xpath("//*[@id=\"secondepage\"]/center/button[2]")).isDisplayed());
+			driver.close();
 		}
 		
 		@Test
@@ -232,6 +240,7 @@ public class Testing {
 			driver.findElement(By.id("btnnext")).click();
 			driver.findElement(By.id("btnback")).click();
 			assertEquals(true, driver.findElement(By.xpath("//*[@id=\"2\"]/input[1]")).isSelected());
+			driver.close();
 		}
 		
 		@Test
@@ -268,6 +277,7 @@ public class Testing {
 			driver.findElement(By.id("btnnext")).click();
 			driver.findElement(By.id("btnback")).click();
 			assertEquals(true, driver.findElement(By.xpath("//*[@id=\"1\"]/input[1]")).isSelected());
+			driver.close();
 		}
 		
 		@Test
@@ -306,6 +316,7 @@ public class Testing {
 			driver.findElement(By.id("btnnext")).click();	
 			driver.findElement(By.xpath("//*[@id=\"markpage\"]/center/button[1]")).click();	
 			assertEquals(true, driver.findElement(By.id("btnnext")).isDisplayed());
+			driver.close();
 		}
 		
 		@Test
@@ -344,6 +355,7 @@ public class Testing {
 			driver.findElement(By.id("btnnext")).click();
 			driver.findElement(By.xpath("//*[@id=\"markpage\"]/center/button[2]")).click();	
 			assertEquals(true, driver.findElement(By.xpath("/html/body")).isDisplayed());
+			driver.close();
 		}
 		
 		@Test
@@ -364,6 +376,7 @@ public class Testing {
 			driver.findElement(By.xpath("//*[@id=\"answers\"]/div[1]/div[1]/input")).click();
 			driver.findElement(By.id("nextquest")).click();
 			assertEquals(true, driver.findElement(By.name("question")).isDisplayed());
+			driver.close();
 		}
 		
 		@Test
@@ -381,6 +394,7 @@ public class Testing {
 					fail("Error!");
 				}
 			}
+			driver.close();
 		}
 		
 		@Test
@@ -415,6 +429,7 @@ public class Testing {
 					fail("Error!");
 				}
 			}
+			driver.close();
 		}
 		
 		@Test
@@ -461,6 +476,7 @@ public class Testing {
 			driver.findElement(By.id("startB")).click();
 			driver.findElement(By.id("nextquest")).click();
 			assertEquals(true, driver.findElement(By.name("question")).isDisplayed());
+			driver.close();
 		}
 		
 		@Test
@@ -479,6 +495,7 @@ public class Testing {
 			driver.findElement(By.id("nextquest")).click();	
 			driver.findElement(By.id("nextquest")).click();	
 			assertEquals(true, driver.findElement(By.name("question")).isDisplayed());
+			driver.close();
 		}
 		
 		@Test
@@ -508,6 +525,7 @@ public class Testing {
 			}
 			driver.findElement(By.id("nextquest")).click();
 			assertEquals(true, driver.findElement(By.name("question")).isDisplayed());
+			driver.close();
 		}
 		
 		@Test
@@ -587,6 +605,7 @@ public class Testing {
 			}
 			catch (NoAlertPresentException e) {
 				System.out.println(e.getMessage());
+				driver.close();
 			}
 			alertMessage = driver.switchTo().alert().getText();
 			assertEquals("You have to mark an answer!!", alertMessage);
@@ -671,5 +690,6 @@ public class Testing {
 			driver.findElement(By.xpath("//*[@id=\"0\"]/input[2]")).click();
 			driver.findElement(By.id("btnnext")).click();
 			assertEquals(driver.findElement(By.id("mark")).getText(), "Failed");
+			driver.close();
 		}	
 }
