@@ -3,6 +3,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+
 public class Main {
 	
 	public static void main(String[] args) throws Exception {
@@ -109,8 +110,8 @@ public class Main {
 		else {
 			throw new Exception("Error 11");	
 		}
-		
-		if(driver.getPageSource().contains("Sucsses")==true) {
+
+		if(driver.findElement(By.id("mark")).getText().equalsIgnoreCase("Sucsses")) {
 			System.out.println("Sanity Test Passed Successfully");
 		}
 		else {

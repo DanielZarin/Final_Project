@@ -1,8 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
 
 public class Integration_Test {
 
@@ -113,7 +111,7 @@ public class Integration_Test {
 		
 		if(driver.getPageSource().contains("Sucsses")==true) {
 			driver.findElement(By.xpath("//*[@id=\"fackBook2\"]/img")).click();
-			Robot r = new Robot(); r.keyPress(KeyEvent.VK_ENTER); r.keyRelease(KeyEvent.VK_ENTER);
+			driver.switchTo().alert().accept();
 			Thread.sleep(500);
 		}
 		else {
