@@ -93,7 +93,7 @@ public class Integration_Test {
 					throw new Exception("Error 9");	
 				}
 				
-				if(driver.getPageSource().contains("Test")==true) {
+				if(driver.findElement(By.xpath("//*[@id=\"1\"]/input[1]")).isDisplayed()) {
 					driver.findElement(By.xpath("//*[@id=\"1\"]/input[1]")).click();
 					driver.findElement(By.xpath("//*[@id=\"btnnext\"]")).click();
 				}
@@ -101,7 +101,7 @@ public class Integration_Test {
 					throw new Exception("Error 10");	
 				}
 				
-				if(driver.getPageSource().contains("Test")==true) {
+				if(driver.findElement(By.xpath("//*[@id=\"0\"]/input[1]")).isDisplayed()) {
 					driver.findElement(By.xpath("//*[@id=\"0\"]/input[1]")).click();
 					driver.findElement(By.xpath("//*[@id=\"btnnext\"]")).click();
 				}

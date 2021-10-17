@@ -1,4 +1,3 @@
-//import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -95,7 +94,7 @@ public class Main {
 			throw new Exception("Error 9");	
 		}
 		
-		if(driver.getPageSource().contains("Test")==true) {
+		if(driver.findElement(By.xpath("//*[@id=\"1\"]/input[1]")).isDisplayed()) {
 			driver.findElement(By.xpath("//*[@id=\"1\"]/input[1]")).click();
 			driver.findElement(By.xpath("//*[@id=\"btnnext\"]")).click();
 		}
@@ -103,7 +102,7 @@ public class Main {
 			throw new Exception("Error 10");	
 		}
 		
-		if(driver.getPageSource().contains("Test")==true) {
+		if(driver.findElement(By.xpath("//*[@id=\"0\"]/input[1]")).isDisplayed()) {
 			driver.findElement(By.xpath("//*[@id=\"0\"]/input[1]")).click();
 			driver.findElement(By.xpath("//*[@id=\"btnnext\"]")).click();
 		}
