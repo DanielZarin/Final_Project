@@ -15,28 +15,22 @@ public class Testing {
 		driver.get(globURL);
 		driver.findElement(By.id("startB")).click();
 		
-		if(driver.getPageSource().contains("question number: 1")==true) {
 			int maxChar = 50;
 			for (int iLoopChar=0; iLoopChar < maxChar; iLoopChar++) {
 				driver.findElement(By.name("question")).sendKeys("a"); 
 			}
 			driver.findElement(By.id("nextquest")).click();
 			assertEquals(true, driver.findElement(By.xpath("//*[@id=\"answers\"]/div[1]/div[1]/input")).isDisplayed());
-		}
-		else {
-			fail("ERROR");
 			driver.close();
-			}
-	}
+		}
+
 	@Test
 	public void test2() {
 	//Enter 49 characters into question field + "?" and click on Next			
 		WebDriver driver = new ChromeDriver();
 		driver.get(globURL);
 		driver.findElement(By.id("startB")).click();
-		
-		if(driver.getPageSource().contains("question number: 1")==true) {
-			
+					
 			int maxChar = 49;
 			for (int iLoopChar=0; iLoopChar < maxChar; iLoopChar++) {
 				driver.findElement(By.name("question")).sendKeys("a"); 
@@ -46,10 +40,6 @@ public class Testing {
 			assertEquals(true, driver.findElement(By.xpath("//*[@id=\"answers\"]/div[1]/div[1]/input")).isDisplayed());
 			driver.close();
 		}
-		else {
-			fail("ERROR");
-		}
-	}
 
 		@Test
 		public void test3() {
@@ -248,6 +238,7 @@ public class Testing {
 		//Click on the Back button on the answers to the 3rd question in the game			
 			String[] qArr = {"a","b","c"};
 			String[][] ar = {{"1", "2", "a"},{"2", "2", "b"}, {"3", "2", "c"},{"4", "2", "d"},{"1","2","e"},{"2","2","f"},{"3","2","g"},{"4","2","h"},{"1","2","i"},{"2","2","j"},{"3","2","k"},{"4","2","l"}};
+			String[][] arr = {{"2", "1"},{"1", "1"}};
 			int brakein = 4;
 			int loop = 1;
 			int tmpIndx = 0;
@@ -271,10 +262,10 @@ public class Testing {
 				}
 			}
 			driver.findElement(By.xpath("//*[@id=\"secondepage\"]/center/button[1]")).click();
-			driver.findElement(By.xpath("//*[@id=\"2\"]/input[1]")).click();
-			driver.findElement(By.id("btnnext")).click();
-			driver.findElement(By.xpath("//*[@id=\"1\"]/input[1]")).click();
-			driver.findElement(By.id("btnnext")).click();
+			for (int i = 0; i < arr.length; i++) {
+				driver.findElement(By.xpath("//*[@id="+ arr[i][0] +"]/input["+ arr[i][1] +"]")).click();
+				driver.findElement(By.id("btnnext")).click();
+			}
 			driver.findElement(By.id("btnback")).click();
 			assertEquals(true, driver.findElement(By.xpath("//*[@id=\"1\"]/input[1]")).isSelected());
 			driver.close();
@@ -285,6 +276,7 @@ public class Testing {
 		//Click on the Try again button
 			String[] qArr = {"a","b","c"};
 			String[][] ar = {{"1", "2", "a"},{"2", "2", "b"}, {"3", "2", "c"},{"4", "2", "d"},{"1","2","e"},{"2","2","f"},{"3","2","g"},{"4","2","h"},{"1","2","i"},{"2","2","j"},{"3","2","k"},{"4","2","l"}};
+			String[][] arr = {{"2", "1"},{"1", "1"},{"0", "1"}};
 			int brakein = 4;
 			int loop = 1;
 			int tmpIndx = 0;
@@ -308,12 +300,10 @@ public class Testing {
 				}
 			}
 			driver.findElement(By.xpath("//*[@id=\"secondepage\"]/center/button[1]")).click();
-			driver.findElement(By.xpath("//*[@id=\"2\"]/input[1]")).click();
-			driver.findElement(By.id("btnnext")).click();
-			driver.findElement(By.xpath("//*[@id=\"1\"]/input[1]")).click();
-			driver.findElement(By.id("btnnext")).click();	
-			driver.findElement(By.xpath("//*[@id=\"0\"]/input[1]")).click();
-			driver.findElement(By.id("btnnext")).click();	
+			for (int i = 0; i < arr.length; i++) {
+				driver.findElement(By.xpath("//*[@id="+ arr[i][0] +"]/input["+ arr[i][1] +"]")).click();
+				driver.findElement(By.id("btnnext")).click();
+			}
 			driver.findElement(By.xpath("//*[@id=\"markpage\"]/center/button[1]")).click();	
 			assertEquals(true, driver.findElement(By.id("btnnext")).isDisplayed());
 			driver.close();
@@ -324,6 +314,7 @@ public class Testing {
 		//Click on the Quit button at the end of the game
 			String[] qArr = {"a","b","c"};
 			String[][] ar = {{"1", "2", "a"},{"2", "2", "b"}, {"3", "2", "c"},{"4", "2", "d"},{"1","2","e"},{"2","2","f"},{"3","2","g"},{"4","2","h"},{"1","2","i"},{"2","2","j"},{"3","2","k"},{"4","2","l"}};
+			String[][] arr = {{"2", "1"},{"1", "1"},{"0", "1"}};
 			int brakein = 4;
 			int loop = 1;
 			int tmpIndx = 0;
@@ -347,12 +338,10 @@ public class Testing {
 				}
 			}
 			driver.findElement(By.xpath("//*[@id=\"secondepage\"]/center/button[1]")).click();
-			driver.findElement(By.xpath("//*[@id=\"2\"]/input[1]")).click();
-			driver.findElement(By.id("btnnext")).click();
-			driver.findElement(By.xpath("//*[@id=\"1\"]/input[1]")).click();
-			driver.findElement(By.id("btnnext")).click();	
-			driver.findElement(By.xpath("//*[@id=\"0\"]/input[1]")).click();
-			driver.findElement(By.id("btnnext")).click();
+			for (int i = 0; i < arr.length; i++) {
+				driver.findElement(By.xpath("//*[@id="+ arr[i][0] +"]/input["+ arr[i][1] +"]")).click();
+				driver.findElement(By.id("btnnext")).click();
+			}
 			driver.findElement(By.xpath("//*[@id=\"markpage\"]/center/button[2]")).click();	
 			assertEquals(true, driver.findElement(By.xpath("/html/body")).isDisplayed());
 			driver.close();
@@ -390,9 +379,7 @@ public class Testing {
 			driver.findElement(By.id("nextquest")).click();
 			for (int i = 0; i < ar.length; i++) {
 				driver.findElement(By.xpath("//*[@id=\"answers\"]/div["+ ar[i][0] +"]/div["+ ar[i][1] +"]/input")).click();
-				if (!driver.findElement(By.xpath("//*[@id=\"answers\"]/div["+ ar[i][0] +"]/div["+ ar[i][1] +"]/input")).isEnabled()){
-					fail("Error!");
-				}
+				assertEquals(true, driver.findElement(By.xpath("//*[@id=\"answers\"]/div["+ ar[i][0] +"]/div["+ ar[i][1] +"]/input")).isEnabled());
 			}
 			driver.close();
 		}
@@ -425,9 +412,7 @@ public class Testing {
 			}
 			for (int i = 0; i < arr.length; i++) {
 				driver.findElement(By.xpath("//*[@id=\"answers\"]/div["+ arr[i][0] +"]/div["+ arr[i][1] +"]/input")).click();
-				if (!driver.findElement(By.xpath("//*[@id=\"answers\"]/div["+ arr[i][0] +"]/div["+ arr[i][1] +"]/input")).isEnabled()){
-					fail("Error!");
-				}
+				assertEquals(true, driver.findElement(By.xpath("//*[@id=\"answers\"]/div["+ ar[i][0] +"]/div["+ ar[i][1] +"]/input")).isEnabled());
 			}
 			driver.close();
 		}
@@ -462,10 +447,9 @@ public class Testing {
 			}
 			for (int i = 0; i < arr.length; i++) {
 				driver.findElement(By.xpath("//*[@id=\"answers\"]/div["+ arr[i][0] +"]/div["+ arr[i][1] +"]/input")).click();
-				if (!driver.findElement(By.xpath("//*[@id=\"answers\"]/div["+ arr[i][0] +"]/div["+ arr[i][1] +"]/input")).isEnabled()){
-					fail("Error!");
-				}
+				assertEquals(true, driver.findElement(By.xpath("//*[@id=\"answers\"]/div["+ ar[i][0] +"]/div["+ ar[i][1] +"]/input")).isEnabled());
 			}
+			driver.close();
 		}
 		
 		@Test
@@ -616,6 +600,7 @@ public class Testing {
 		//Click the next button without marking an answer in preparation for answers to Question No. 3	
 			String[] qArr = {"a","b","c"};
 			String[][] ar = {{"1", "2", "a"},{"2", "2", "b"}, {"3", "2", "c"},{"4", "2", "d"},{"1","2","e"},{"2","2","f"},{"3","2","g"},{"4","2","h"},{"1","2","i"},{"2","2","j"},{"3","2","k"},{"4","2","l"}};
+			String[][] arr = {{"2", "1"},{"1", "1"}};
 			int brakein = 4;
 			int loop = 1;
 			int tmpIndx = 0;
@@ -640,10 +625,10 @@ public class Testing {
 				}
 			}
 			driver.findElement(By.xpath("//*[@id=\"secondepage\"]/center/button[1]")).click();
-			driver.findElement(By.xpath("//*[@id=\"2\"]/input[1]")).click();
-			driver.findElement(By.id("btnnext")).click();
-			driver.findElement(By.xpath("//*[@id=\"1\"]/input[1]")).click();
-			driver.findElement(By.id("btnnext")).click();
+			for (int i = 0; i < arr.length; i++) {
+				driver.findElement(By.xpath("//*[@id="+ arr[i][0] +"]/input["+ arr[i][1] +"]")).click();
+				driver.findElement(By.id("btnnext")).click();
+			}
 			driver.findElement(By.id("btnnext")).click();
 			try {
 				driver.switchTo().alert();
@@ -660,6 +645,7 @@ public class Testing {
 		//Preparing a game and failing one question on purpose - ERROR!
 			String[] qArr = {"a","b","c"};
 			String[][] ar = {{"1", "2", "a"},{"2", "2", "b"}, {"3", "2", "c"},{"4", "2", "d"},{"1","2","e"},{"2","2","f"},{"3","2","g"},{"4","2","h"},{"1","2","i"},{"2","2","j"},{"3","2","k"},{"4","2","l"}};
+			String[][] arr = {{"2", "1"},{"1", "1"},{"0", "1"}};
 			int brakein = 4;
 			int loop = 1;
 			int tmpIndx = 0;
@@ -683,12 +669,10 @@ public class Testing {
 				}
 			}
 			driver.findElement(By.xpath("//*[@id=\"secondepage\"]/center/button[1]")).click();
-			driver.findElement(By.xpath("//*[@id=\"2\"]/input[1]")).click();
-			driver.findElement(By.id("btnnext")).click();
-			driver.findElement(By.xpath("//*[@id=\"1\"]/input[1]")).click();
-			driver.findElement(By.id("btnnext")).click();
-			driver.findElement(By.xpath("//*[@id=\"0\"]/input[2]")).click();
-			driver.findElement(By.id("btnnext")).click();
+			for (int i = 0; i < arr.length; i++) {
+				driver.findElement(By.xpath("//*[@id="+ arr[i][0] +"]/input["+ arr[i][1] +"]")).click();
+				driver.findElement(By.id("btnnext")).click();
+			}
 			assertEquals(driver.findElement(By.id("mark")).getText(), "Failed");
 			driver.close();
 		}	
@@ -698,6 +682,7 @@ public class Testing {
 		//Preparing a game and failing two questions on purpose
 			String[] qArr = {"a","b","c"};
 			String[][] ar = {{"1", "2", "a"},{"2", "2", "b"}, {"3", "2", "c"},{"4", "2", "d"},{"1","2","e"},{"2","2","f"},{"3","2","g"},{"4","2","h"},{"1","2","i"},{"2","2","j"},{"3","2","k"},{"4","2","l"}};
+			String[][] arr = {{"2", "1"},{"1", "2"},{"0", "2"}};
 			int brakein = 4;
 			int loop = 1;
 			int tmpIndx = 0;
@@ -721,12 +706,10 @@ public class Testing {
 				}
 			}
 			driver.findElement(By.xpath("//*[@id=\"secondepage\"]/center/button[1]")).click();
-			driver.findElement(By.xpath("//*[@id=\"2\"]/input[1]")).click();
-			driver.findElement(By.id("btnnext")).click();
-			driver.findElement(By.xpath("//*[@id=\"1\"]/input[2]")).click();
-			driver.findElement(By.id("btnnext")).click();
-			driver.findElement(By.xpath("//*[@id=\"0\"]/input[2]")).click();
-			driver.findElement(By.id("btnnext")).click();
+			for (int i = 0; i < arr.length; i++) {
+				driver.findElement(By.xpath("//*[@id="+ arr[i][0] +"]/input["+ arr[i][1] +"]")).click();
+				driver.findElement(By.id("btnnext")).click();
+			}
 			assertEquals(driver.findElement(By.id("mark")).getText(), "Failed");
 			driver.close();
 		}
@@ -736,6 +719,7 @@ public class Testing {
 		//Preparing a game and failing all questions on purpose
 			String[] qArr = {"a","b","c"};
 			String[][] ar = {{"1", "2", "a"},{"2", "2", "b"}, {"3", "2", "c"},{"4", "2", "d"},{"1","2","e"},{"2","2","f"},{"3","2","g"},{"4","2","h"},{"1","2","i"},{"2","2","j"},{"3","2","k"},{"4","2","l"}};
+			String[][] arr = {{"2", "2"},{"1", "2"},{"0", "2"}};
 			int brakein = 4;
 			int loop = 1;
 			int tmpIndx = 0;
@@ -759,12 +743,10 @@ public class Testing {
 				}
 			}
 			driver.findElement(By.xpath("//*[@id=\"secondepage\"]/center/button[1]")).click();
-			driver.findElement(By.xpath("//*[@id=\"2\"]/input[2]")).click();
-			driver.findElement(By.id("btnnext")).click();
-			driver.findElement(By.xpath("//*[@id=\"1\"]/input[2]")).click();
-			driver.findElement(By.id("btnnext")).click();
-			driver.findElement(By.xpath("//*[@id=\"0\"]/input[2]")).click();
-			driver.findElement(By.id("btnnext")).click();
+			for (int i = 0; i < arr.length; i++) {
+				driver.findElement(By.xpath("//*[@id="+ arr[i][0] +"]/input["+ arr[i][1] +"]")).click();
+				driver.findElement(By.id("btnnext")).click();
+			}
 			assertEquals(driver.findElement(By.id("mark")).getText(), "Failed");
 			driver.close();
 		}
