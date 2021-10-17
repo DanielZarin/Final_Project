@@ -733,7 +733,7 @@ public class Testing {
 		
 		@Test
 		public void test25() {
-		//Preparing a game and failing all questions on purpose.
+		//Preparing a game and failing all questions on purpose
 			String[] qArr = {"a","b","c"};
 			String[][] ar = {{"1", "2", "a"},{"2", "2", "b"}, {"3", "2", "c"},{"4", "2", "d"},{"1","2","e"},{"2","2","f"},{"3","2","g"},{"4","2","h"},{"1","2","i"},{"2","2","j"},{"3","2","k"},{"4","2","l"}};
 			int brakein = 4;
