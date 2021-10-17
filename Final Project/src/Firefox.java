@@ -6,6 +6,9 @@ public class Firefox {
 
 	public static void main(String[] args) throws Exception {
 		//********************************** Pre-Game **********************************
+		String[][] ar1 = {{"1", "2", "a"},{"2", "2", "b"}, {"3", "2", "c"},{"4", "2", "d"}};
+		String[][] ar2 = {{"1", "2", "e"},{"2", "2", "f"}, {"3", "2", "g"},{"4", "2", "h"}};
+		String[][] ar3 = {{"1", "2", "i"},{"2", "2", "j"}, {"3", "2", "k"},{"4", "2", "l"}};
 		String globURL = "https://shemsvcollege.github.io/Trivia/";
 		System.setProperty("webdriver.gecko.driver", "C:\\Users\\Daniel Zarin\\eclipse-workspace\\Final Project\\drivers\\geckodriver\\geckodriver.exe");
 		WebDriver driver = new FirefoxDriver();
@@ -26,9 +29,8 @@ public class Firefox {
 		}
 		
 		if(driver.getPageSource().contains("Mark the right one!")==true) {
-			String[][] ar = {{"1", "2", "a"},{"2", "2", "b"}, {"3", "2", "c"},{"4", "2", "d"}};
-			for (int i = 0; i < ar.length; i++) {
-				driver.findElement(By.xpath("//*[@id=\"answers\"]/div["+ ar[i][0] +"]/div["+ ar[i][1] +"]/input")).sendKeys(ar[i][2]);
+			for (int i = 0; i < ar1.length; i++) {
+				driver.findElement(By.xpath("//*[@id=\"answers\"]/div["+ ar1[i][0] +"]/div["+ ar1[i][1] +"]/input")).sendKeys(ar1[i][2]);
 			}
 			driver.findElement(By.xpath("//*[@id=\"answers\"]/div[1]/div[1]/input")).click();
 			driver.findElement(By.id("nextquest")).click();
@@ -46,9 +48,8 @@ public class Firefox {
 		}
 		
 		if(driver.getPageSource().contains("Mark the right one!")==true) {
-			String[][] ar = {{"1", "2", "e"},{"2", "2", "f"}, {"3", "2", "g"},{"4", "2", "h"}};
-			for (int i = 0; i < ar.length; i++) {
-				driver.findElement(By.xpath("//*[@id=\"answers\"]/div["+ ar[i][0] +"]/div["+ ar[i][1] +"]/input")).sendKeys(ar[i][2]);
+			for (int i = 0; i < ar2.length; i++) {
+				driver.findElement(By.xpath("//*[@id=\"answers\"]/div["+ ar2[i][0] +"]/div["+ ar2[i][1] +"]/input")).sendKeys(ar2[i][2]);
 			}
 			driver.findElement(By.xpath("//*[@id=\"answers\"]/div[1]/div[1]/input")).click();
 			driver.findElement(By.id("nextquest")).click();
@@ -66,9 +67,8 @@ public class Firefox {
 		}
 		
 		if(driver.getPageSource().contains("Mark the right one!")==true) {
-			String[][] ar = {{"1", "2", "i"},{"2", "2", "j"}, {"3", "2", "k"},{"4", "2", "l"}};
-			for (int i = 0; i < ar.length; i++) {
-				driver.findElement(By.xpath("//*[@id=\"answers\"]/div["+ ar[i][0] +"]/div["+ ar[i][1] +"]/input")).sendKeys(ar[i][2]);
+			for (int i = 0; i < ar3.length; i++) {
+				driver.findElement(By.xpath("//*[@id=\"answers\"]/div["+ ar3[i][0] +"]/div["+ ar3[i][1] +"]/input")).sendKeys(ar3[i][2]);
 			}
 			driver.findElement(By.xpath("//*[@id=\"answers\"]/div[1]/div[1]/input")).click();
 			driver.findElement(By.id("nextquest")).click();
